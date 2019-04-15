@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
+
+    <title>安全设置</title>
+
+    <link href="../AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css">
+    <link href="../AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css">
+
+    <link href="../css/personal.css" rel="stylesheet" type="text/css">
+    <link href="../css/infstyle.css" rel="stylesheet" type="text/css">
+    <script src="../js/jquery.js"></script>
+    <script src="../js/index.js"></script>
+
+
+</head>
+
+
+<body>
+<!--头 -->
+<header>
+    <article>
+        <div class="mt-logo">
+            <!--顶部导航条 -->
+            <div class="am-container header">
+                <ul class="message-l">
+                    <div class="topMessage">
+
+                    </div>
+                </ul>
+                <ul class="message-r">
+                    <div class="topMessage home">
+                        <div class="menu-hd"><a href="../home/home.html" target="_top" class="h">商城首页</a></div>
+                    </div>
+                    <div class="topMessage my-shangcheng">
+                        <div class="menu-hd MyShangcheng"><a href="information.html" target="_top"><i
+                                class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+                    </div>
+                    <div class="topMessage mini-cart">
+                        <div class="menu-hd"><a id="mc-menu-hd" href="../home/shopcart.html" target="_top"><i
+                                class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum"
+                                                                                                      class="h">0</strong></a>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+        </div>
+    </article>
+</header>
+
+
+<div class="center">
+    <div class="col-main">
+        <div class="main-wrap">
+
+            <!--标题 -->
+            <div class="user-safety">
+                <div class="am-cf am-padding">
+                    <div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">账户安全</strong> /
+                        <small>Set&nbsp;up&nbsp;Safety</small>
+                    </div>
+                </div>
+                <hr/>
+
+                <!--头像 -->
+                <div class="user-infoPic">
+
+                    <div class="filePic">
+                        <img class="am-circle am-img-thumbnail" src="../images/getAvatar.do.jpg" alt=""/>
+                    </div>
+
+                    <p class="am-form-help">头像</p>
+
+                    <div class="info-m">
+                        <div><b>用户名：<i id="s-name"></i></b></div>
+                        <div class="u-level">
+									<span class="rank r2">
+							             <s class="vip1"></s><a class="classes" href="#">铜牌会员</a>
+						            </span>
+                        </div>
+                        <div class="u-safety">
+                            <a href="safety.html">
+                                账户安全
+                                <span class="u-profile"><i class="bc_ee0000" style="width: 60px;"
+                                                           width="0">60分</i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="check">
+                    <ul>
+                        <div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">设置安全问题</strong> / <small>Set&nbsp;Safety&nbsp;Question</small></div>
+
+                    </ul>
+                    <br>
+                    <ul>
+                        <form class="am-form am-form-horizontal">
+                            <div class="am-form-group select">
+                                <label for="problem" class="am-form-label">问题</label>
+                                <div class="am-form-content">
+                                    <select data-am-selected id="q">
+                                        <option value="a" selected>请选择安全问题</option>
+                                        <option value="您最喜欢的颜色是什么">您最喜欢的颜色是什么？</option>
+                                        <option value="您的故乡在哪里">您的故乡在哪里？</option>
+                                        <option value="您最爱干什么">您最爱干什么？</option>
+                                        <option value="您的星座是什么">您的星座是什么？</option>
+                                        <option value="您最喜欢的人是什么">您最喜欢的人是什么？</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="am-form-group">
+                                <label for="answer" class="am-form-label">答案</label>
+                                <div class="am-form-content">
+                                    <input type="text" id="answer" placeholder="请输入安全问题答案">
+                                </div>
+                            </div>
+
+
+
+                            <div class="info-btn">
+                                <button type="button" onclick="saveQ()"  >保存修改</button>
+                            </div>
+
+                        </form>
+                    </ul>
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <aside class="menu">
+        <ul>
+            <li class="person">
+            </li>
+            <li class="person">
+                <ul>
+                    <li class="active"><a href="information.html">个人信息</a></li>
+                    <li><a href="safety.html">安全设置</a></li>
+                    <li><a href="address.html">收货地址</a></li>
+                    <li><a href="order.html">订单管理</a></li>
+                </ul>
+        </ul>
+    </aside>
+</div>
+
+</body>
+
+</html>

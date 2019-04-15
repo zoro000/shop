@@ -1,0 +1,370 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>首页</title>
+
+    <link href="../AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css"/>
+    <link href="../AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css"/>
+
+    <link href="../basic/css/demo.css" rel="stylesheet" type="text/css"/>
+
+    <link href="../css/hmstyle.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/skin.css" rel="stylesheet" type="text/css"/>
+    <script src="../AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
+    <script src="../AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
+
+
+</head>
+
+<body>
+<div class="hmtop">
+    <!--顶部导航条 -->
+    <div class="am-container header">
+        <ul class="message-l">
+            <div class="topMessage" id="welcome">
+                <div class="menu-hd" id="head">
+                    <!--<a href="login.html" target="_top" class="h">亲，请登录</a>
+                    <a href="register.html" target="_top">免费注册</a>-->
+                </div>
+            </div>
+        </ul>
+        <ul class="message-r">
+            <div class="topMessage home">
+                <div class="menu-hd"><a href="home.html" target="_tmop" class="h">商城首页</a></div>
+            </div>
+            <div class="topMessage my-shangcheng">
+                <div class="menu-hd MyShangcheng"><a href="../person/information.html" target="_top"><i
+                        class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+            </div>
+            <div class="topMessage mini-cart">
+                <div class="menu-hd"><a id="mc-menu-hd" href="shopcart.html" target="_top"><i
+                        class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum"
+                                                                                              class="h">0</strong></a>
+                </div>
+            </div>
+        </ul>
+    </div>
+
+    <!--悬浮搜索框-->
+
+    <div class="nav white">
+        <div class="logo"><img src="../images/logo.png"/></div>
+        <div class="logoBig">
+            <li><img src="../images/logobig.png"/></li>
+        </div>
+
+        <div class="search-bar pr">
+            <!--<a name="index_none_header_sysc" href="login.html"></a>-->
+            <form>
+                <input id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索" autocomplete="off"
+                       style="font-size: 15px">
+                <input id="ai-topsearch" class="submit am-btn" value="搜索" index="1" type="button" onclick="search()">
+                <!--//加的-->
+            </form>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+</div>
+<!--轮播-->
+<div class="banner">
+    <div class="clear" id="imgs">
+        <a id="p" href="introduction.html?pid="><img src="../images/ad1.jpg" id="img" onmouseover="stop()"
+                                                     style="width: 98%;height: 75%;"/></a>
+    </div>
+
+    <!--<div class="am-slider am-slider-default scoll" data-am-flexslider id="demo-slider-0">
+           <ul class="am-slides" id="img">
+               &lt;!&ndash;<li class="banner1"><a href="introduction.html"><img src="../images/ad1.jpg" /></a></li>
+               <li class="banner2"><a><img src="../images/ad2.jpg" /></a></li>
+               <li class="banner3"><a><img src="../images/ad3.jpg" /></a></li>
+               <li class="banner4"><a><img src="../images/ad4.jpg" /></a></li>&ndash;&gt;
+           </ul>
+    </div>-->
+</div>
+<div class="shopNav">
+    <div class="slideall">
+
+        <div class="long-title"><span class="all-goods">全部分类</span></div>
+        <div class="nav-cont">
+            <ul>
+                <li class="index"><a href="search.html?cid=1">水果</a></li>
+                <li class="qc"><a href="search.html?cid=2">坚果</a></li>
+            </ul>
+            <!-- <div class="nav-extra">
+                <i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利
+                <i class="am-icon-angle-right" style="padding-left: 10px;"></i>
+            </div> -->
+        </div>
+
+        <!--侧边导航 -->
+        <div id="nav" class="navfull">
+            <div class="area clearfix">
+                <div class="category-content" id="guide_2">
+                </div>
+            </div>
+        </div>
+
+
+        <!--轮播-->
+
+        <script type="text/javascript">
+            (function () {
+                $('.am-slider').flexslider();
+            });
+            $(document).ready(function () {
+                $("li").hover(function () {
+                    $(".category-content .category-list li.first .menu-in").css("display", "none");
+                    $(".category-content .category-list li.first").removeClass("hover");
+                    $(this).addClass("hover");
+                    $(this).children("div.menu-in").css("display", "block")
+                }, function () {
+                    $(this).removeClass("hover")
+                    $(this).children("div.menu-in").css("display", "none")
+                });
+            })
+        </script>
+
+
+        <!--小导航 -->
+        <div class="am-g am-g-fixed smallnav">
+            <div class="am-u-sm-3">
+                <a href="sort.html"><img src="../images/navsmall.jpg"/>
+                    <div class="title">商品分类</div>
+                </a>
+            </div>
+            <div class="am-u-sm-3">
+                <a href="#"><img src="../images/huismall.jpg"/>
+                    <div class="title">大聚惠</div>
+                </a>
+            </div>
+            <div class="am-u-sm-3">
+                <a href="#"><img src="../images/mansmall.jpg"/>
+                    <div class="title">个人中心</div>
+                </a>
+            </div>
+            <div class="am-u-sm-3">
+
+            </div>
+        </div>
+
+        <!--走马灯 -->
+        <div class="clear"></div>
+    </div>
+    <script type="text/javascript">
+        if ($(window).width()) {
+            function autoScroll(obj) {
+                $(obj).find("ul").animate({
+                    marginTop: "-39px"
+                }, 500, function () {
+                    $(this).css({
+                        marginTop: "0px"
+                    }).find("li:first").appendTo(this);
+                })
+            }
+
+            $(function () {
+                setInterval('autoScroll(".demo")', 3000);
+            })
+        }
+    </script>
+</div>
+<div class="shopMainbg">
+    <div class="shopMain" id="shopmain">
+        <div id="f1">
+            <!--甜点-->
+
+            <div class="am-container ">
+                <div class="shopTitle ">
+                    <h4>水果</h4>
+                    <h3>每一个水果都有一个故事</h3>
+                    <span class="more ">
+
+                    <a href="search.html?cid=1">更多美味<i class="am-icon-angle-right" style="padding-left:10px ;"></i></a>
+                        </span>
+                </div>
+            </div>
+
+            <div class="am-g am-g-fixed floodFour">
+                <div class="am-u-sm-5 am-u-md-4 text-one list ">
+                    <div class="word" id="fruit">
+
+                    </div>
+
+                    <img src="../images/act1.png "/>
+
+                    <div class="triangle-topright"></div>
+                </div>
+
+                <div id="fruit1" class="am-u-sm-7 am-u-md-4 text-two sug">
+
+                </div>
+
+                <div id="fruit2" class="am-u-sm-7 am-u-md-4 text-two">
+
+                </div>
+
+
+                <div id="fruit3" class="am-u-sm-3 am-u-md-2 text-three big">
+
+                </div>
+
+                <div id="fruit4" class="am-u-sm-3 am-u-md-2 text-three sug">
+
+                </div>
+
+                <div id="fruit5" class="am-u-sm-3 am-u-md-2 text-three ">
+
+                </div>
+                <div id="fruit6" class="am-u-sm-3 am-u-md-2 text-three  big ">
+
+                </div>
+
+            </div>
+            <div class="clear "></div>
+        </div>
+
+
+        <div id="f2">
+            <!--坚果-->
+            <div class="am-container ">
+                <div class="shopTitle ">
+                    <h4>坚果</h4>
+                    <h3>酥酥脆脆，回味无穷</h3>
+                    <span class="more ">
+                    <a href="search.html?cid=2">更多美味<i class="am-icon-angle-right" style="padding-left:10px ;"></i></a>
+                        </span>
+                </div>
+            </div>
+            <div class="am-g am-g-fixed floodThree ">
+                <div class="am-u-sm-4 text-four list">
+                    <div class="word" id="nut">
+                        <!--<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>-->
+                        <!--<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>-->
+                        <!--<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>	-->
+                        <!--<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>-->
+                        <!--<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>-->
+                        <!--<a class="outer" href="#"><span class="inner"><b class="text">核桃</b></span></a>									-->
+                    </div>
+                    <img src="../images/act1.png "/>
+
+                    <div class="triangle-topright"></div>
+                </div>
+                <div id="nut1" class="am-u-sm-4 text-four">
+                </div>
+                <div id="nut2" class="am-u-sm-4 text-four sug">
+                </div>
+                <div id="nut3" class="am-u-sm-6 am-u-md-3 text-five big ">
+                </div>
+                <div id="nut4" class="am-u-sm-6 am-u-md-3 text-five ">
+                </div>
+                <div id="nut5" class="am-u-sm-6 am-u-md-3 text-five sug">
+                </div>
+                <div id="nut6" class="am-u-sm-6 am-u-md-3 text-five big">
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+<!--引导 -->
+<div class="navCir">
+    <li class="active"><a href="home.html"><i class="am-icon-home "></i>首页</a></li>
+    <li><a href="sort.html"><i class="am-icon-list"></i>分类</a></li>
+    <li><a href="shopcart.html"><i class="am-icon-shopping-basket"></i>购物车</a></li>
+    <li><a href="../person/index.html"><i class="am-icon-user"></i>我的</a></li>
+</div>
+
+
+<!--菜单 -->
+<div class=tip>
+    <div id="sidebar">
+        <div id="wrap">
+            <div id="prof" class="item ">
+                <a href="../person/information.html">
+                    <span class="setting "></span>
+                </a>
+                <div class="ibar_login_box status_login ">
+                    <div class="avatar_box ">
+                        <p class="avatar_imgbox "><img src="../images/no-img_mid_.jpg "/></p>
+                        <ul class="user_info ">
+                            <li>用户名sl1903</li>
+                            <li>级&nbsp;别普通会员</li>
+                        </ul>
+                    </div>
+                    <!--<div class="login_btnbox ">
+                        <a href="# " class="login_order ">我的订单</a>
+
+                    </div>-->
+                    <i class="icon_arrow_white "></i>
+                </div>
+
+            </div>
+            <div id="shopCart " class="item ">
+                <a onclick="shopcart()">
+                    <span class="message "></span>
+                </a>
+                <p>购物车</p>
+                <p class="cart_num " id="count">0</p>
+            </div>
+
+
+            <div class="quick_toggle ">
+
+                <li class="qtitem ">
+                    <a href="#top " class="return_top "><span class="top "></span></a>
+                </li>
+            </div>
+
+            <!--回到顶部 -->
+            <div id="quick_links_pop " class="quick_links_pop hide "></div>
+
+        </div>
+
+    </div>
+</div>
+</div>
+<script type="text/javascript " src="../basic/js/quick_links.js "></script>
+<!--<script type="text/javascript">
+    function show(n){
+        if(n==4){n=1}
+        document.getElementById("img").setAttribute("src","../images/ad"+n+".jpg");
+        n++;
+        time = window.setTimeout("show("+n+")",1000);
+    }
+    var time = window.setTimeout("show(1)",1000);
+    function stop(n){
+        window.clearTimeout(myTimer);
+        document.getElementById("img").setAttribute("src","image/"+n+".jpg");
+    }
+</script>-->
+</body>
+<script src="../js/admin-home.js"></script>
+<script>
+    /*$.ajax({
+        type: "post",
+        url: "../ListServlet",
+        data:{"act":"carousel"},
+        dataType: "json",
+        success: function (data) {
+            console.log(data);
+            $.each(data,function (index,product) {
+                var html ='';
+                console.log(product.id+product.type);
+                // html+='<li class="banner1"><a href="introduction.html?pid='+product.pid+'><img src="'+product.type+'"/></a></li>'
+                html+="<li class='banner1'><a href='introduction.html?pid="+product.pid+"'><img src='"+product.type+"'/></a></li>"
+				console.log(html);
+                $("#img").append(html);
+            })
+        }
+    })*/
+</script>
+
+</html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- mybatis的总配置文件 -->
+<configuration>
+    <!-- 加载jdbc.properties的配置 -->
+    <properties resource="jdbc.properties"></properties>
+    <!-- 向控制台中输出日志 -->
+    <!--<settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>-->
+
+    <typeAliases>
+        <!-- 起别名 -->
+        <!--<typeAlias type="com.ssm.pojo.Emp" alias="Emp"></typeAlias>-->
+        <!--<typeAlias type="com.ssm.pojo.Article" alias="Article"></typeAlias>-->
+        <!--<typeAlias type="com.ssm.pojo.Article_Commt" alias="Commt"></typeAlias>-->
+
+        <package name="pojo"/>
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <!-- 事务管理 -->
+            <transactionManager type="JDBC"></transactionManager>
+            <!-- 数据源：连接池 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"></property>
+                <property name="url" value="${url}"></property>
+                <property name="username" value="${username}"></property>
+                <property name="password" value="${password}"></property>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 加载映射文件 -->
+    <mappers>
+        <mapper resource="mapper/LoginMapper.xml"></mapper>
+        <mapper resource="mapper/UserMapper.xml"></mapper>
+        <mapper resource="mapper/AdminMapper.xml"></mapper>
+        <mapper resource="mapper/OrderMapper.xml"></mapper>
+        <mapper resource="mapper/CarouselListMapper.xml"></mapper>
+        <mapper resource="mapper/ProductMapper.xml"></mapper>
+        <mapper resource="mapper/ProductDetailMapper.xml"></mapper>
+        <mapper resource="mapper/ShopCartMapper.xml"></mapper>
+        <mapper resource="mapper/PayMapper.xml"></mapper>
+        <mapper resource="mapper/SearchMapper.xml"></mapper>
+        <mapper resource="mapper/OrderItemMapper.xml"></mapper>
+    </mappers>
+</configuration>

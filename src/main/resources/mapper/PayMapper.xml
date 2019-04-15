@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.PayMapper">
+    <!--查询商品-->
+    <select id="selectByPid" resultType="Product">
+        select p.*,pi.type from shop.product p,shop.productimage pi where p.id=pi.pid and p.id=#{pid}
+    </select>
+    <!--根据得到的购物车id查询商品信息-->
+    <select id="selectByOdid" resultType="Product">
+            select p.* ,o.number,o.id otid,pi.type from shop.product p,shop.orderitem o,shop.productimage pi
+            where p.id=o.cid and p.id= pi.pid and o.id=#{odid};
+    </select>
+</mapper>

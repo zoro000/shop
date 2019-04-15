@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.OrderMapper">
+    <insert id="insertOrder" parameterType="Order">
+        insert into shop.order(addressId,  payDate, status, price, uid) values
+        (#{addressId},#{payDate},#{status},#{price},#{uid})
+    </insert>
+    <insert id="insertOrders" parameterType="Orders">
+        insert  into shop.orders(pid, oid, num) values (#{pid},#{oid},#{num})
+    </insert>
+    <select id="selectOrdersId" resultType="int">
+        select id from shop.order where payDate=#{payDate}
+    </select>
+</mapper>

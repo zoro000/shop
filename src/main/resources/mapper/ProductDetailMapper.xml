@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.ProductDetailMapper">
+    <!--根据商品id联表查出商品信息和地址-->
+    <select id="queryById" resultType="Product">
+        select p.*,pi.type from shop.product p ,shop.productimage pi where p.id=pi.pid and p.id=#{id}
+    </select>
+    <!--根据商品id查出商品cid-->
+    <select id="queryCid" resultType="int">
+        select cid from shop.product where id=#{id}
+    </select>
+    <!--根据商品cid查出某一类产品-->
+    <select id="queryByCid" resultType="Product">
+        select p.* ,pi.type from shop.product p,shop.productimage pi
+        where p.id=pi.pid and p.cid=#{cid}
+    </select>
+
+</mapper>
